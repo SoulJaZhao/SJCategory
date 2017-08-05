@@ -1,0 +1,16 @@
+PODS:
+  - SJCategory (0.1.0)
+
+DEPENDENCIES:
+  - SJCategory (from `../`)
+
+EXTERNAL SOURCES:
+  SJCategory:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SJCategory: 2b0f87fe4d181e66b9d6d952f3710d1b73f24f8d
+
+PODFILE CHECKSUM: 63fa54c7f53c01e980d91f4c69c5116b30e9b001
+
+COCOAPODS: 1.1.1
