@@ -1,8 +1,8 @@
 {
   "name": "SJCategory",
-  "version": "0.1.0",
-  "summary": "A short description of SJCategory.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "1.0.0",
+  "summary": "个人使用分类",
+  "description": "个人使用分类",
   "homepage": "https://github.com/SoulJaZhao/SJCategory",
   "license": {
     "type": "MIT",
@@ -13,10 +13,14 @@
   },
   "source": {
     "git": "https://github.com/SoulJaZhao/SJCategory.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "SJCategory/Classes/**/*"
+  "source_files": "SJCategory/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "CoreGraphics"
+  ]
 }

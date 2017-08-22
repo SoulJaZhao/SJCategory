@@ -1,5 +1,5 @@
 PODS:
-  - SJCategory (0.1.0)
+  - SJCategory (1.0.0)
 
 DEPENDENCIES:
   - SJCategory (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SJCategory: 2b0f87fe4d181e66b9d6d952f3710d1b73f24f8d
+  SJCategory: 036d33aa11a799d242052cc23059248a70a26efa
 
 PODFILE CHECKSUM: 63fa54c7f53c01e980d91f4c69c5116b30e9b001
 
