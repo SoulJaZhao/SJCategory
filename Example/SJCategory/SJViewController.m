@@ -7,7 +7,7 @@
 //
 
 #import "SJViewController.h"
-
+#import <SJCategory/SJCategory.h>
 #import "SJRoundImageViewController.h"
 
 @interface SJViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -23,6 +23,7 @@
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
+    [_tableView setBackgroundColor:[UIColor sj_colorWithHexString:@"#CCE9F9"]];
     [self.view addSubview:_tableView];
     
     _sourceDic = @{
