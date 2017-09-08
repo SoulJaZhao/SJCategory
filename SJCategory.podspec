@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SJCategory'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '个人使用分类'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-个人使用分类
+个人使用分类OC版本
                        DESC
 
   s.homepage         = 'https://github.com/SoulJaZhao/SJCategory'
