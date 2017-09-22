@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "NSString+SJString.h"
 #import "SJCategory.h"
 #import "UIColor+SJColor.h"
 #import "UIImage+SJImage.h"

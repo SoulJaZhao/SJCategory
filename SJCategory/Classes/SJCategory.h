@@ -13,5 +13,7 @@
 #import "UIImage+SJImage.h"
 //引入颜色分类
 #import "UIColor+SJColor.h"
+//引入字符串分类
+#import "NSString+SJString.h"
 
 #endif /* SJCategory_h */

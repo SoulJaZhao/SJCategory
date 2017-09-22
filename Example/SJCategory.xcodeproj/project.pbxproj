@@ -25,6 +25,8 @@
 		7BD392E3A93BC967471E82D6 /* Pods_SJCategory_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F2904D56AE22365767A8CA /* Pods_SJCategory_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9686D7731F35D9320006B096 /* SJRoundImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686D7721F35D9320006B096 /* SJRoundImageViewController.m */; };
+		F4E1B5E41F74E188007A3612 /* SJColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B5E31F74E188007A3612 /* SJColorViewController.m */; };
+		F4E1B5E81F74E419007A3612 /* SJStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B5E71F74E419007A3612 /* SJStringViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		A5041F1CD9B26CCD785829F4 /* Pods-SJCategory_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJCategory_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SJCategory_Example/Pods-SJCategory_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C9D96C7895C62AE648F650BE /* Pods_SJCategory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJCategory_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18BBB9723620FB7945F3D95 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F4E1B5E21F74E188007A3612 /* SJColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJColorViewController.h; sourceTree = "<group>"; };
+		F4E1B5E31F74E188007A3612 /* SJColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJColorViewController.m; sourceTree = "<group>"; };
+		F4E1B5E61F74E419007A3612 /* SJStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStringViewController.h; sourceTree = "<group>"; };
+		F4E1B5E71F74E419007A3612 /* SJStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStringViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,8 @@
 		6003F593195388D20070C39A /* Example for SJCategory */ = {
 			isa = PBXGroup;
 			children = (
+				F4E1B5E51F74E3F5007A3612 /* SJString */,
+				F4E1B5E11F74DFBA007A3612 /* SJColor */,
 				9686D7701F35D8DF0006B096 /* SJImageVC */,
 				6003F59C195388D20070C39A /* SJAppDelegate.h */,
 				6003F59D195388D20070C39A /* SJAppDelegate.m */,
@@ -207,6 +215,24 @@
 				6595D223D757934F44DBC0E0 /* Pods-SJCategory_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F4E1B5E11F74DFBA007A3612 /* SJColor */ = {
+			isa = PBXGroup;
+			children = (
+				F4E1B5E21F74E188007A3612 /* SJColorViewController.h */,
+				F4E1B5E31F74E188007A3612 /* SJColorViewController.m */,
+			);
+			path = SJColor;
+			sourceTree = "<group>";
+		};
+		F4E1B5E51F74E3F5007A3612 /* SJString */ = {
+			isa = PBXGroup;
+			children = (
+				F4E1B5E61F74E419007A3612 /* SJStringViewController.h */,
+				F4E1B5E71F74E419007A3612 /* SJStringViewController.m */,
+			);
+			path = SJString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,7 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E1B5E81F74E419007A3612 /* SJStringViewController.m in Sources */,
 				6003F59E195388D20070C39A /* SJAppDelegate.m in Sources */,
+				F4E1B5E41F74E188007A3612 /* SJColorViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* SJViewController.m in Sources */,
 				9686D7731F35D9320006B096 /* SJRoundImageViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -507,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -561,6 +589,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SJCategory/SJCategory-Prefix.pch";
 				INFOPLIST_FILE = "SJCategory/SJCategory-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -577,6 +606,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SJCategory/SJCategory-Prefix.pch";
 				INFOPLIST_FILE = "SJCategory/SJCategory-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,6 +9,8 @@
 #import "SJViewController.h"
 #import <SJCategory/SJCategory.h>
 #import "SJRoundImageViewController.h"
+#import "SJColorViewController.h"
+#import "SJStringViewController.h"
 
 @interface SJViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -29,6 +31,15 @@
     _sourceDic = @{
                    @"SJImage":@[
                             @"圆角Image"
+                           ],
+                   @"SJColor":@[
+                            @"16进制字符串颜色"
+                           ],
+                   @"SJString":@[
+                            @"32位MD5小写",
+                            @"32位MD5大写",
+                            @"16位MD5小写",
+                            @"16位MD5大写"
                            ]
                    };
 }
@@ -70,12 +81,34 @@
     
     SJRoundImageViewController *roundVC = [[SJRoundImageViewController alloc] init];
     
+    SJColorViewController *colorVC = [[SJColorViewController alloc] init];
+    
+    SJStringViewController *stringVC = [[SJStringViewController alloc] init];
+    
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
                 [self.navigationController pushViewController:roundVC animated:YES];
                 break;
-                
+            default:
+                break;
+        }
+    } else if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+                [self.navigationController pushViewController:colorVC animated:YES];
+                break;
+            default:
+                break;
+        }
+    } else if (indexPath.section == 2) {
+        switch (indexPath.row) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                [self.navigationController pushViewController:stringVC animated:YES];
+                break;
             default:
                 break;
         }
