@@ -11,6 +11,7 @@
 #import "SJRoundImageViewController.h"
 #import "SJColorViewController.h"
 #import "SJStringViewController.h"
+#import "SJShapeViewController.h"
 
 @interface SJViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -40,6 +41,9 @@
                             @"32位MD5大写",
                             @"16位MD5小写",
                             @"16位MD5大写"
+                           ],
+                   @"SJView":@[
+                            @"带尖角的View"
                            ]
                    };
 }
@@ -85,6 +89,8 @@
     
     SJStringViewController *stringVC = [[SJStringViewController alloc] init];
     
+    SJShapeViewController *shapeVC = [[SJShapeViewController alloc] init];
+    
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
@@ -109,6 +115,15 @@
             case 3:
                 [self.navigationController pushViewController:stringVC animated:YES];
                 break;
+            default:
+                break;
+        }
+    } else if (indexPath.section == 3) {
+        switch (indexPath.row) {
+            case 0:
+                [self.navigationController pushViewController:shapeVC animated:YES];
+                break;
+                
             default:
                 break;
         }

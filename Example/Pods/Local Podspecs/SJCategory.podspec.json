@@ -1,6 +1,6 @@
 {
   "name": "SJCategory",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "summary": "个人使用分类",
   "description": "个人使用分类OC版本",
   "homepage": "https://github.com/SoulJaZhao/SJCategory",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/SoulJaZhao/SJCategory.git",
-    "tag": "1.0.1"
+    "tag": "1.0.2"
   },
   "platforms": {
     "ios": "8.0"

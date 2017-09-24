@@ -15,5 +15,7 @@
 #import "UIColor+SJColor.h"
 //引入字符串分类
 #import "NSString+SJString.h"
+//引入视图分类
+#import "UIView+SJView.h"
 
 #endif /* SJCategory_h */
