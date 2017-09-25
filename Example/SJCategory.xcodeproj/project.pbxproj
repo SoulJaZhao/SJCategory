@@ -26,6 +26,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		963070271F776FBB00F415FC /* SJShapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963070261F776FBB00F415FC /* SJShapeViewController.m */; };
 		9686D7731F35D9320006B096 /* SJRoundImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686D7721F35D9320006B096 /* SJRoundImageViewController.m */; };
+		F4547A8B1F78D1D300AE16DE /* SJImageViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4547A8A1F78D1D300AE16DE /* SJImageViewViewController.m */; };
 		F4E1B5E41F74E188007A3612 /* SJColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B5E31F74E188007A3612 /* SJColorViewController.m */; };
 		F4E1B5E81F74E419007A3612 /* SJStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B5E71F74E419007A3612 /* SJStringViewController.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,8 @@
 		A5041F1CD9B26CCD785829F4 /* Pods-SJCategory_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SJCategory_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SJCategory_Example/Pods-SJCategory_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C9D96C7895C62AE648F650BE /* Pods_SJCategory_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SJCategory_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18BBB9723620FB7945F3D95 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F4547A891F78D1D300AE16DE /* SJImageViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJImageViewViewController.h; sourceTree = "<group>"; };
+		F4547A8A1F78D1D300AE16DE /* SJImageViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJImageViewViewController.m; sourceTree = "<group>"; };
 		F4E1B5E21F74E188007A3612 /* SJColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJColorViewController.h; sourceTree = "<group>"; };
 		F4E1B5E31F74E188007A3612 /* SJColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJColorViewController.m; sourceTree = "<group>"; };
 		F4E1B5E61F74E419007A3612 /* SJStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStringViewController.h; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		6003F593195388D20070C39A /* Example for SJCategory */ = {
 			isa = PBXGroup;
 			children = (
+				F4547A881F78D1AE00AE16DE /* SJImageView */,
 				963070241F776F6C00F415FC /* SJView */,
 				F4E1B5E51F74E3F5007A3612 /* SJString */,
 				F4E1B5E11F74DFBA007A3612 /* SJColor */,
@@ -228,6 +232,15 @@
 				6595D223D757934F44DBC0E0 /* Pods-SJCategory_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F4547A881F78D1AE00AE16DE /* SJImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F4547A891F78D1D300AE16DE /* SJImageViewViewController.h */,
+				F4547A8A1F78D1D300AE16DE /* SJImageViewViewController.m */,
+			);
+			path = SJImageView;
 			sourceTree = "<group>";
 		};
 		F4E1B5E11F74DFBA007A3612 /* SJColor */ = {
@@ -427,7 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4ED058D4DEAAF1811C49CA5 /* [CP] Check Pods Manifest.lock */ = {
@@ -445,7 +458,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -455,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4547A8B1F78D1D300AE16DE /* SJImageViewViewController.m in Sources */,
 				F4E1B5E81F74E419007A3612 /* SJStringViewController.m in Sources */,
 				6003F59E195388D20070C39A /* SJAppDelegate.m in Sources */,
 				F4E1B5E41F74E188007A3612 /* SJColorViewController.m in Sources */,

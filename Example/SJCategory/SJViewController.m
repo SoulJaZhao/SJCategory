@@ -12,10 +12,17 @@
 #import "SJColorViewController.h"
 #import "SJStringViewController.h"
 #import "SJShapeViewController.h"
+#import "SJImageViewViewController.h"
 
 @interface SJViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
+
+/**  标题数组 **/
+@property (nonatomic, strong) NSArray *titleArray;
+
+/**  数据源 **/
 @property (nonatomic,strong) NSDictionary *sourceDic;
+
 @end
 
 @implementation SJViewController
@@ -44,17 +51,28 @@
                            ],
                    @"SJView":@[
                             @"带尖角的View"
+                           ],
+                   @"SJImageView":@[
+                            @"带尖角的ImageView"
                            ]
                    };
+    
+    _titleArray = @[
+                    @"SJImage",
+                    @"SJColor",
+                    @"SJString",
+                     @"SJView",
+                    @"SJImageView"
+                    ];
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _sourceDic.allKeys.count;
+    return _titleArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSString *key = [_sourceDic.allKeys objectAtIndex:section];
+    NSString *key = [_titleArray objectAtIndex:section];
     NSArray *arr = [_sourceDic objectForKey:key];
     return arr.count;
 }
@@ -69,7 +87,7 @@
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    NSString *key = [_sourceDic.allKeys objectAtIndex:indexPath.section];
+    NSString *key = [_titleArray objectAtIndex:indexPath.section];
     NSString *text = [[_sourceDic objectForKey:key] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = text;
@@ -77,7 +95,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [_sourceDic.allKeys objectAtIndex:section];
+    return [_titleArray objectAtIndex:section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,6 +108,7 @@
     SJStringViewController *stringVC = [[SJStringViewController alloc] init];
     
     SJShapeViewController *shapeVC = [[SJShapeViewController alloc] init];
+    SJImageViewViewController *imageViewVC = [[SJImageViewViewController alloc] init];
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
@@ -122,6 +141,15 @@
         switch (indexPath.row) {
             case 0:
                 [self.navigationController pushViewController:shapeVC animated:YES];
+                break;
+                
+            default:
+                break;
+        }
+    } else if (indexPath.section == 4) {
+        switch (indexPath.row) {
+            case 0:
+                [self.navigationController pushViewController:imageViewVC animated:YES];
                 break;
                 
             default:
