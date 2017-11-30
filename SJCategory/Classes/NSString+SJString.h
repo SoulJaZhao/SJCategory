@@ -37,4 +37,15 @@
  *  @return 返回加密后的字符串
  */
 +(NSString *)sj_md5ForUpper16Bate:(NSString *)string;
+/*
+ *  银行卡脱敏
+ *  @param  originalBankCard    原始银行卡号(保持前六后四的处理)
+ */
++ (NSString *)sj_desensitizeBankCard:(NSString *)originalBankCard;
+
+/*
+ *  判断字符串是否全为数字
+ *  @param  string    字符创
+ */
++ (BOOL)sj_isNumberic:(NSString *)string;
 @end

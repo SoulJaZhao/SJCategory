@@ -62,4 +62,41 @@
     }
     return str;
 }
+#pragma mark - 原始银行卡号
++ (NSString *)sj_desensitizeBankCard:(NSString *)originalBankCard {
+    __block NSString *maskBankCardString = @"";
+    dispatch_queue_t sjConcurrentQueue = dispatch_queue_create("sjConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(sjConcurrentQueue, ^{
+        if (originalBankCard == nil) {
+            maskBankCardString = @"";
+        }
+        
+        if (originalBankCard.length <= 10) {
+            maskBankCardString = originalBankCard;
+        } else {
+            
+            NSString *maskString = @"";
+            for (int i = 0; i < originalBankCard.length - 10; i++) {
+                maskString = [maskString stringByAppendingString:@"*"];
+            }
+            
+            maskBankCardString = [originalBankCard stringByReplacingCharactersInRange:NSMakeRange(6, originalBankCard.length - 10) withString:maskString];
+        }
+    });
+    dispatch_barrier_sync(sjConcurrentQueue, ^{
+        
+    });
+    return maskBankCardString;
+}
+
+#pragma mark - 判断字符串是否全为数字
++ (BOOL)sj_isNumberic:(NSString *)string {
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if (string.length > 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
 @end
